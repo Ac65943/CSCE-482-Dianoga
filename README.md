@@ -1,4 +1,2 @@
-# CSCE-482-Dianoga
-Beta branch will be the branch for the backend team.
+# CSCE-482-Dianoga Gamma
 
-Gamma branch will be the branch for the frontend team.
