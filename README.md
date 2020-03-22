@@ -15,3 +15,38 @@ python
 import django
 print(django.get_version())
 ```
+First redirect into the correct directory and create a Django project
+```bash
+django-admin startproject datasite
+```
+
+## Basics
+The outer datasite/ is the root directory.
+
+manage.py is the command-line utility that lets you interact with the Django project in various ways.
+
+The inner datasite/ is the directory contains the actual Python package for the project.
+
+datasite/__init__.py is the empty file taht tells Python that this directory should be considered a Python package.
+
+datasite/settings.py contains the settings or configurations for the Django project.
+
+datasite/urls.py contains the URL declarations for Django project.
+
+datasite/asgi.py is an entry-point for ASGI-compatible web servers to serve the project.
+
+datasite/wsgi.py is an entry-point for WSGI-compatible web servers to serve the project.
+
+## Run
+In order to run, the project redirect into the root datasite folder and type the following command.
+```bash
+python manage.py runserver
+```
+
+If you want to change the port to port 8080 then type following command
+```bash
+python manage.py runserver 8080
+```
+
+## Application
+In the directory which contains manage.py, run the following command in order to create an application
