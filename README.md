@@ -49,4 +49,7 @@ python manage.py runserver 8080
 ```
 
 ## Application
-In the directory which contains manage.py, run the following command in order to create an application
+In the directory which contains manage.py, run the following command in order to create an application.
+```bash
+python manage.py startapp data
+```
