@@ -18,4 +18,4 @@ def handle_uploaded_file(f):
             destination.write(chunk)
 
 def home(request):
-    return render(request,'base.html')
+    return render(request,'home.html')
