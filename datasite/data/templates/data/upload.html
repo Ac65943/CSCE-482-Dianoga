@@ -6,15 +6,10 @@
     <div cont>
     
     <form method="post" enctype="multipart/form-data">
-        <div class="form-group">
-            <label for="fileField">Input File</label>
-            <input class="form-control-file" id="fileField" type="file" name="" />
-        </div>
-        <button type="submit" class="btn btn-outline-success">Submit</button>
+        {%csrf_token%}
+        <label for="fileField">Input File</label>
+        <input class="form-control-file" id="fileField" type="file" name="" />
+        <input type="submit" class="btn btn-outline-success">
     </form>
-    {% if uploaded_file_url %}
-    <p>File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
-    {% endif %}
-    <a class="btn btn-primary" href="home" role="button">Home</a></p>
 {% endblock %}
 

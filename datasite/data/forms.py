@@ -1,4 +1,8 @@
 from django import forms
+from .models import Document
 
-class UploadFileForm(forms.Form):
-    file_field = forms.FileField(widget=forms.ClearableFileInput(attrs={'multiple': True}))
+class FileFieldForm(forms.Form):
+    docfile = forms.FileField(
+        label='Select a file',
+        help_text='max. 42 megabytes'
+    )

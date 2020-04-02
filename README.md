@@ -8,6 +8,7 @@ Download Miniconda installer from https://docs.conda.io/en/latest/miniconda.html
 Once Miniconda is done installing, open Anaconda Prompt and type in the following command.
 ```bash
 python -m pip install Django
+python -m pip install Pillow
 ```
 Check if Django is properly installed by typing
 ```bash
