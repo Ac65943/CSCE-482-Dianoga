@@ -7,8 +7,7 @@
     
     <form method="post" enctype="multipart/form-data">
         {%csrf_token%}
-        <label for="fileField">Input File</label>
-        <input class="form-control-file" id="fileField" type="file" name="" />
+        {{form.as_p }}
         <input type="submit" class="btn btn-outline-success">
     </form>
 {% endblock %}
