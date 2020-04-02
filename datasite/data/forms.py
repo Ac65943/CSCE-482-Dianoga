@@ -6,4 +6,4 @@ from .models import Document
 class UploadFileForm(forms.ModelForm):
     class Meta:
         model = Document
-        fields =('file','file_name', )
+        fields =('category','file',)

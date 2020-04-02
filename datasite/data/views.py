@@ -13,10 +13,13 @@ def upload_file(request):
         form = UploadFileForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('home')
+            return HttpResponseRedirect('success')
     else:
         form = UploadFileForm()
     return render(request, 'upload.html', {'form': form})
 
 def home(request):
     return render(request,'home.html')
+
+def success(request):
+    return render(request,'success.html')
