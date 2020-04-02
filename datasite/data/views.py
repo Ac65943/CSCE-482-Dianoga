@@ -1,6 +1,6 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
-from .forms import FileFieldForm
+from .forms import UploadFileForm
 from .models import Document
 
 
@@ -11,7 +11,7 @@ def handle_uploaded_file(f):
 
 def upload_file(request):
     if request.method == 'POST':
-        form = FileFieldForm(request.POST, request.FILES)
+        form = UploadFileForm(request.POST, request.FILES)
         if form.is_valid():
             instance = Document(file_field=request.FILES['file'])
             instance.save()
