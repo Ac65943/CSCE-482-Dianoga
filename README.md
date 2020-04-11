@@ -13,10 +13,12 @@ Download Android Studio from https://developer.android.com/studio and follow the
 ## Set up on Android
 In order to run the Flutter app on an Android device:
 1. Enable Developer options on your device
-2. Must plug in the device to your local machine.
+2. Window devices must install the Google USB Driver from https://developer.android.com/studio/run/win-usb.
+3. Must plug in the device to your local machine.
 3. Run flutter devices in terminal or command prompt.
 
 ## Set up on Local Machine
-For testing and running a Flutter app on your local machine, an Android emulator.
-1. 
-
+For testing and running a Flutter app on your local machine using an Android emulator.
+1. Enable VM acceleration. Instructions on enabling on different platforms are at https://developer.android.com/studio/run/emulator-acceleration.
+2. Launch Android Studio > Tools > AVD Manager and select Create Virtual Device. For device definition select Pixel 2 and then click ** Next **.
+3. Under 
