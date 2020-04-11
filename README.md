@@ -15,7 +15,7 @@ In order to run the Flutter app on an Android device:
 1. Enable Developer options on your device
 2. Window devices must install the Google USB Driver from https://developer.android.com/studio/run/win-usb.
 3. Must plug in the device to your local machine.
-3. Run flutter devices in terminal or command prompt.
+3. Run **flutter devices** in terminal or command prompt.
 
 ## Set up on Local Machine
 For testing and running a Flutter app on your local machine using an Android emulator.
