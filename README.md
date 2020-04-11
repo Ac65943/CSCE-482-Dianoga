@@ -20,5 +20,8 @@ In order to run the Flutter app on an Android device:
 ## Set up on Local Machine
 For testing and running a Flutter app on your local machine using an Android emulator.
 1. Enable VM acceleration. Instructions on enabling on different platforms are at https://developer.android.com/studio/run/emulator-acceleration.
-2. Launch Android Studio > Tools > AVD Manager and select Create Virtual Device. For device definition select Pixel 2 and then click ** Next **.
-3. Under 
+2. Launch **Android Studio > Tools > AVD Manager** and select **Create Virtual Device**. For device definition select Pixel XL and then click **Next**. For the system image select **Q** and click **Next**.
+3. Under Emulated Performance, select **Hardware- GLES 2.0** to enable hardware acceleration.
+4. Verify the settings and click **Finish**.
+5. In the AVD Manager, click **Run**.
+
