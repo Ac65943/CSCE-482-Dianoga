@@ -27,3 +27,13 @@ For testing and running a Flutter app on your local machine using an Android emu
 4. Verify the settings and click **Finish**.
 5. In the AVD Manager, click **Run**.
 
+## Working on project
+When pulling the project, within the recycle folder type the following command in the command prompt or terminal:
+```
+flutter packages get
+```
+
+Run the project with the command
+```
+flutter devices
+```
