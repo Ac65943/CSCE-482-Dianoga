@@ -33,7 +33,7 @@ When pulling the project, within the recycle folder type the following command i
 flutter packages get
 ```
 
-Run the project with the command
+Run the project with the command while running the emulator or device
 ```
 flutter devices
 ```
