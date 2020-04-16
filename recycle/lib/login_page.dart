@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:recycle/sign_in.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -36,7 +38,17 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget _signInButton(){
     return OutlineButton(
       splashColor: Colors.grey,
-      onPressed: (){},
+      onPressed: (){
+        signInWithGoogle().whenComplete((){
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context){
+                return FirstScreen();
+              },
+            ),
+          );
+        });
+      },
       shape: RoundedRectangleBorder(borderRadius:BorderRadius.circular(40)),
       highlightElevation: 0,
       borderSide: BorderSide(color: Colors.white),
@@ -60,6 +72,15 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
+    );
+  }
+}
+
+class FirstScreen extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      body: Container(color: Colors.blue[100]),
     );
   }
 }
