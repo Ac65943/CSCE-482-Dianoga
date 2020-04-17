@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "109042342411",
+    "firebase_url": "https://recycling-wars-dia.firebaseio.com",
+    "project_id": "recycling-wars-dia",
+    "storage_bucket": "recycling-wars-dia.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:109042342411:android:9e0da5e0ee93713c31450e",
+        "android_client_info": {
+          "package_name": "com.example.recycle"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "109042342411-74ml2g5bqs6h9b74omvqepfnh3e4en78.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.recycle",
+            "certificate_hash": "d74b2e57a0f1ba007fd4fee6085f8cfb4870df5c"
+          }
+        },
+        {
+          "client_id": "109042342411-3jgfm7e8pepenbv0rjmtd711486lq44c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIIUHgKvg2a5DJZx4Cqs40nrpTyiyWigU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "109042342411-3jgfm7e8pepenbv0rjmtd711486lq44c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
