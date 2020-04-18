@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
         accentColor: Colors.white,
         backgroundColor: Colors.lightGreen[300],
       ),
-      home: MyHomePage(title: 'Dianoga'),
+      home: LoginPage(title: 'Dianoga'),
     );
   }
 }
