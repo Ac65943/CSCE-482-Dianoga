@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:recycle/home_page.dart';
 import 'package:recycle/sign_in.dart';
-import 'package:recycle/home_page.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({Key key, this.title}) : super(key: key);
@@ -82,6 +81,9 @@ class SignOutScreen extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).primaryColor,
+      ),
       body: Container(
         decoration: BoxDecoration(
           color: Theme.of(context).backgroundColor,
@@ -111,7 +113,7 @@ class SignOutScreen extends StatelessWidget{
                 name,
                 style: TextStyle(
                   fontSize: 25,
-                  color: Colors.blue,
+                  color: Theme.of(context).primaryColorDark,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -128,7 +130,7 @@ class SignOutScreen extends StatelessWidget{
                 email,
                 style: TextStyle(
                   fontSize: 25,
-                  color: Colors.blue,
+                  color: Theme.of(context).primaryColorDark,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -138,7 +140,7 @@ class SignOutScreen extends StatelessWidget{
                   signOutGoogle();
                   Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context){return LoginPage();}), ModalRoute.withName('/'));
                 },
-                color: Colors.blue,
+                color: Theme.of(context).primaryColorDark,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
