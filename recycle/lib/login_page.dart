@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:recycle/home_page.dart';
 import 'package:recycle/sign_in.dart';
+import 'package:recycle/home_page.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({Key key, this.title}) : super(key: key);
@@ -43,7 +45,7 @@ class _LoginPageState extends State<LoginPage> {
           Navigator.of(context).push(
             MaterialPageRoute(
               builder: (context){
-                return FirstScreen();
+                return HomePage();
               },
             ),
           );
@@ -76,17 +78,13 @@ class _LoginPageState extends State<LoginPage> {
   }
 }
 
-class FirstScreen extends StatelessWidget{
+class SignOutScreen extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topRight,
-            end: Alignment.bottomLeft,
-            colors: [Colors.green[100],Colors.green[400]],
-          ),
+          color: Theme.of(context).backgroundColor,
         ),
         child: Center(
           child: Column(
@@ -113,7 +111,7 @@ class FirstScreen extends StatelessWidget{
                 name,
                 style: TextStyle(
                   fontSize: 25,
-                  color: Colors.deepPurple,
+                  color: Colors.blue,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -130,7 +128,7 @@ class FirstScreen extends StatelessWidget{
                 email,
                 style: TextStyle(
                   fontSize: 25,
-                  color: Colors.deepPurple,
+                  color: Colors.blue,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -140,7 +138,7 @@ class FirstScreen extends StatelessWidget{
                   signOutGoogle();
                   Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context){return LoginPage();}), ModalRoute.withName('/'));
                 },
-                color: Colors.deepPurple,
+                color: Colors.blue,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
