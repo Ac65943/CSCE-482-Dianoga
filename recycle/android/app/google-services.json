@@ -8,14 +8,14 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:109042342411:android:9e0da5e0ee93713c31450e",
+        "mobilesdk_app_id": "1:109042342411:android:4d69a002714d5e8a31450e",
         "android_client_info": {
           "package_name": "com.example.recycle"
         }
       },
       "oauth_client": [
         {
-          "client_id": "109042342411-74ml2g5bqs6h9b74omvqepfnh3e4en78.apps.googleusercontent.com",
+          "client_id": "109042342411-g94qoek0ea5djcprhdf9hrkbrb838r2t.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.recycle",
@@ -38,6 +38,13 @@
             {
               "client_id": "109042342411-3jgfm7e8pepenbv0rjmtd711486lq44c.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "109042342411-camf00668lftou75ig0o90bk71jolotm.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.recycle"
+              }
             }
           ]
         }
