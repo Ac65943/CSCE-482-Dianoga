@@ -18,19 +18,7 @@ class _HomePageState extends State<HomePage>{
     return Scaffold(
       appBar: AppBar(
         title: const Text('Home'),
-        backgroundColor: Theme.of(context).primaryColor,
-        actions: <Widget>[
-          Padding(
-            padding: EdgeInsets.only(right: 20.0),
-            child: GestureDetector(
-              onTap: (){},
-              child: Icon(
-                Icons.search,
-                size:26.0,
-              ),
-            ),
-          ),
-        ],
+        backgroundColor: Theme.of(context).primaryColor, 
       ),
       drawer: Drawer(
         child: ListView(
@@ -50,9 +38,6 @@ class _HomePageState extends State<HomePage>{
             ),
           ],
         ),
-      ),
-      body: Center(
-
       ),
     );
   }
