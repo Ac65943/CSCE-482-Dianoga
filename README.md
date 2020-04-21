@@ -1,6 +1,4 @@
-# Dianoga Flutter Application
-The mobile application was created using Flutter. The main purpose of the application is to enforce better recycling habits for users.
-
+# Delta 
 ## Download
 First download the Flutter SDK from the main Flutter development website. 
 
