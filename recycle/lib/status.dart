@@ -1,58 +1,56 @@
+/// Bar chart example
+import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:flutter/material.dart';
 
-class StatusPage extends StatefulWidget{
-  @override
-  _StatusPageState createState() => _StatusPageState();
-}
+class StatusPage extends StatelessWidget {
+  final List<charts.Series> seriesList;
+  final bool animate;
 
-class _StatusPageState extends State<StatusPage>{
-  int trash;
-  int plastic;
-  int glass;
-  int metal;
-  int paper;
-  int cardboard;
-  
-  trashIncrement(){
-    setState(() {
-      trash++;
-    });
-  }
+  StatusPage(this.seriesList, {this.animate});
 
-  plasticIncrement(){
-    setState(() {
-      plastic++;
-    });
-  }
-
-  glassIncrement(){
-    setState(() {
-      glass++;
-    });
-  }
-
-  metalIncrement(){
-    setState(() {
-      metal++;
-    });
-  }
-
-  paperIncrement(){
-    setState(() {
-      paper++;
-    });
-  }
-
-  cardboardIncrement(){
-    setState(() {
-      cardboard++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context){
-    return Card(
-      
+  /// Creates a [BarChart] with sample data and no transition.
+  factory SimpleBarChart.withSampleData() {
+    return new SimpleBarChart(
+      _createSampleData(),
+      // Disable animations for image tests.
+      animate: false,
     );
   }
+
+
+  @override
+  Widget build(BuildContext context) {
+    return new charts.BarChart(
+      seriesList,
+      animate: animate,
+    );
+  }
+
+  /// Create one series with sample hard coded data.
+  static List<charts.Series<OrdinalSales, String>> _createSampleData() {
+    final data = [
+      new OrdinalSales('2014', 5),
+      new OrdinalSales('2015', 25),
+      new OrdinalSales('2016', 100),
+      new OrdinalSales('2017', 75),
+    ];
+
+    return [
+      new charts.Series<OrdinalSales, String>(
+        id: 'Sales',
+        colorFn: (_, __) => charts.MaterialPalette.blue.shadeDefault,
+        domainFn: (OrdinalSales sales, _) => sales.year,
+        measureFn: (OrdinalSales sales, _) => sales.sales,
+        data: data,
+      )
+    ];
+  }
+}
+
+/// Sample ordinal data type.
+class OrdinalSales {
+  final String year;
+  final int sales;
+
+  OrdinalSales(this.year, this.sales);
 }

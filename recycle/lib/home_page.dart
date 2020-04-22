@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:recycle/login_page.dart';
 import 'package:recycle/sign_in.dart';
+import 'package:recycle/status.dart';
 
 class HomePage extends StatefulWidget{
   HomePage({Key key, this.title}) : super(key: key);
@@ -29,6 +30,12 @@ class _HomePageState extends State<HomePage>{
               decoration: BoxDecoration(
                 color: Colors.green[500],
               ),
+            ),
+            ListTile(
+              title: Text('Status'),
+              onTap: (){
+                Navigator.push(context,MaterialPageRoute(builder: (context)=>StatusPage()));
+              },
             ),
             ListTile(
               title: Text('Sign Out'),
