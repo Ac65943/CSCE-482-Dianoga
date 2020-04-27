@@ -1,8 +1,16 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:recycle/login_page.dart';
 import 'package:recycle/sign_in.dart';
-import 'package:recycle/status.dart';
+import 'package:dio/dio.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:http/http.dart' as http;
+import 'dart:io';
+import 'package:path/path.dart';
+import 'package:async/async.dart';
+import 'package:http_parser/http_parser.dart';
 
 class HomePage extends StatefulWidget{
   HomePage({Key key, this.title}) : super(key: key);
@@ -14,6 +22,38 @@ class HomePage extends StatefulWidget{
 }
 
 class _HomePageState extends State<HomePage>{
+  upload(File imageFile) async {
+    var stream = new http.ByteStream(DelegatingStream.typed(imageFile.openRead()));
+    var length = await imageFile.length();
+
+    var uri = Uri.parse("http://capstone.murtazahakimi.com/predict/");
+
+    var request = new http.MultipartRequest("POST", uri);
+    var multipartFile = new http.MultipartFile('file', stream, length,
+        filename: basename(imageFile.path), contentType: new MediaType('image','png'));
+    //contentType: new MediaType('image', 'png'));
+    print(imageFile.path);
+    request.files.add(multipartFile);
+    var response = await request.send();
+    response.stream.transform(utf8.decoder).listen((value) {
+      //print(value);
+      print(json.decode(value));
+    });
+    print(response.statusCode);
+  }
+
+  /* this is the function that handles getting the image from the device*/
+  File _image;
+  Future _getImage() async {
+    var image = await ImagePicker.pickImage(source:
+    ImageSource.camera);
+
+    setState(() {
+      _image = image;
+      });
+    upload(_image);
+  }
+
   @override
   Widget build(BuildContext context){
     return Scaffold(
@@ -21,6 +61,7 @@ class _HomePageState extends State<HomePage>{
         title: const Text('Home'),
         backgroundColor: Theme.of(context).primaryColor, 
       ),
+
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -32,18 +73,21 @@ class _HomePageState extends State<HomePage>{
               ),
             ),
             ListTile(
-              title: Text('Status'),
-              onTap: (){
-                Navigator.push(context,MaterialPageRoute(builder: (context)=>StatusPage()));
-              },
-            ),
-            ListTile(
               title: Text('Sign Out'),
               onTap: (){
                 Navigator.push(context,MaterialPageRoute(builder: (context) =>SignOutScreen()));
               },
             ),
           ],
+        ),
+      ),
+
+      body: Center(
+        child: FloatingActionButton(
+          onPressed: _getImage,
+          tooltip: 'Pick Image',
+          child: Icon(Icons.add_a_photo),
+          
         ),
       ),
     );
